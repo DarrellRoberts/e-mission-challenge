@@ -1,7 +1,9 @@
 <template>
   <div class="website-grid">
     <Header />
-    <Main />
+    <main>
+      <slot />
+    </main>
     <Footer />
   </div>
 </template>

@@ -1,7 +1,10 @@
 <script lang="ts" setup>
-definePageMeta: {
-  layout: "default";
-}
+import Hero from "@/components/misc/Hero.vue";
+import { useHeadingStore } from "../store/heading";
+
+const store = useHeadingStore();
 </script>
 
-<template></template>
+<template>
+  <Hero :heading="store.heading" />
+</template>
