@@ -1,5 +1,5 @@
 .website-grid {
   display: grid;
-  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-rows: 100px 4fr 200px;
   /* height: 100vh; */
 }

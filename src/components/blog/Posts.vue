@@ -1,18 +1,36 @@
 <script lang="ts" setup>
-import { usePostsStore } from "@/store/posts";
+import { usePostsStore } from "~/store/posts";
 
-const store = usePostsStore();
+const postsStore = usePostsStore();
 </script>
 
 <template>
-  <h2 v-if="store.loading">Loading...</h2>
-  <v-col v-else>
-    <v-card
-      :subtitle="store.posts[0].subtitle"
-      :text="store.posts[0].summary"
-      :title="store.posts[0].title"
-      ><NuxtLink to="/posts/">Read More</NuxtLink></v-card
-    >
-  </v-col>
-  <button @click="console.log(store.posts)">Click</button>
+  <h2 v-if="postsStore.loading">Loading...</h2>
+  <div v-else>
+    <v-text-field
+      prepend-icon="mdi-magnify"
+      v-model="postsStore.searchQuery"
+    ></v-text-field>
+    <v-col v-for="post in postsStore.filteredPosts">
+      <v-card
+        :subtitle="post.subtitle"
+        :text="post.summary"
+        :title="post.title"
+      >
+        <v-img
+          class="mx-auto"
+          height="200"
+          :lazy-src="post.featured_image"
+          max-width="200"
+          :src="post.featured_image"
+        ></v-img>
+        <NuxtLink :to="/posts/ + post.title">Read More</NuxtLink></v-card
+      >
+    </v-col>
+    <v-pagination
+      v-if="!postsStore.loading"
+      :length="postsStore.totalPages"
+      v-model="postsStore.currentPage"
+    ></v-pagination>
+  </div>
 </template>
