@@ -9,7 +9,7 @@ const pageStore = usePageNumberStore();
 const searchStore = useSearchStore();
 
 const filteredPosts = computed<unknown>(() => {
-  return postStore.posts?.filter((post: any) =>
+  return postStore.paginatedPosts?.filter((post: any) =>
     post.title.toLowerCase().includes(searchStore.search.toLowerCase())
   );
 });

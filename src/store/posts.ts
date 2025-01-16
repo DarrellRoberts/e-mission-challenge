@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 import { usePageNumberStore } from "./page";
 
 export const usePostsStore = defineStore("posts", () => {
-  const posts: Ref<any | null> = ref(null);
+  const paginatedPosts: Ref<any | null> = ref(null);
   const loading: Ref<boolean> = ref(true);
   const error: Ref<unknown | null> = ref(null);
   const pageStore = usePageNumberStore();
@@ -14,8 +14,8 @@ export const usePostsStore = defineStore("posts", () => {
       const response = await fetch(
         `https://jsonfakery.com/blogs/paginated?page=${pageStore.page}`
       );
-      posts.value = await response.json();
-      posts.value = posts.value?.data;
+      paginatedPosts.value = await response.json();
+      paginatedPosts.value = paginatedPosts.value?.data;
       loading.value = false;
     } catch (err) {
       loading.value = false;
@@ -23,5 +23,6 @@ export const usePostsStore = defineStore("posts", () => {
       console.error(err);
     }
   });
-  return { posts, loading, error };
+
+  return { paginatedPosts, loading, error };
 });
