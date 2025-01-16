@@ -1,36 +1,36 @@
 <script lang="ts" setup>
-import { usePostsStore } from "@/store/posts";
-import { usePageNumberStore } from "~/store/page";
-import { useSearchStore } from "~/store/search";
-import { computed } from "vue";
+import { usePostsStore } from "~/store/posts";
 
-const postStore = usePostsStore();
-const pageStore = usePageNumberStore();
-const searchStore = useSearchStore();
-
-const filteredPosts = computed<unknown>(() => {
-  return postStore.paginatedPosts?.filter((post: any) =>
-    post.title.toLowerCase().includes(searchStore.search.toLowerCase())
-  );
-});
+const postsStore = usePostsStore();
 </script>
 
 <template>
-  <h2 v-if="postStore.loading">Loading...</h2>
+  <h2 v-if="postsStore.loading">Loading...</h2>
   <div v-else>
     <v-text-field
       prepend-icon="mdi-magnify"
-      v-model="searchStore.search"
+      v-model="postsStore.searchQuery"
     ></v-text-field>
-    <v-col v-for="post in filteredPosts">
-      <v-card :subtitle="post.subtitle" :text="post.summary" :title="post.title"
-        ><NuxtLink :to="/posts/ + post.title">Read More</NuxtLink></v-card
+    <v-col v-for="post in postsStore.filteredPosts">
+      <v-card
+        :subtitle="post.subtitle"
+        :text="post.summary"
+        :title="post.title"
+      >
+        <v-img
+          class="mx-auto"
+          height="200"
+          :lazy-src="post.featured_image"
+          max-width="200"
+          :src="post.featured_image"
+        ></v-img>
+        <NuxtLink :to="/posts/ + post.title">Read More</NuxtLink></v-card
       >
     </v-col>
     <v-pagination
-      v-if="!postStore.loading"
-      :length="10"
-      v-model="pageStore.page"
+      v-if="!postsStore.loading"
+      :length="postsStore.totalPages"
+      v-model="postsStore.currentPage"
     ></v-pagination>
   </div>
 </template>
