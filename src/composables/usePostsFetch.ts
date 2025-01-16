@@ -1,6 +1,6 @@
 import { ref, type Ref, onMounted } from "vue";
 
-export const useFetch = <T>(url: string) => {
+export const usePostsFetch = <T>(url: string) => {
   const fetchedData: Ref<T | null> = ref(null);
   const loading: Ref<boolean> = ref(true);
   const error: Ref<Error | null | unknown> = ref(null);
@@ -14,6 +14,7 @@ export const useFetch = <T>(url: string) => {
     } catch (err) {
       error.value = err;
       loading.value = false;
+      console.error(err);
     }
   };
 
