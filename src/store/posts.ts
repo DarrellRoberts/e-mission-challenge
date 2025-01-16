@@ -12,7 +12,7 @@ export const usePostsStore = defineStore("allPosts", () => {
   const loading: Ref<boolean> = ref(true);
   const error: Ref<Error | null | unknown> = ref(null);
 
-  const paginatedPosts = computed<Post | null>(() => {
+  const paginatedPosts = computed<Post[] | null>(() => {
     const startIndex = (currentPage.value - 1) * itemsPerPage.value;
     const endIndex = startIndex + itemsPerPage.value;
     return posts.value?.slice(startIndex, endIndex);
