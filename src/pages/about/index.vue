@@ -9,4 +9,5 @@ store.changeHeading("About");
 
 <template>
   <Hero :heading="store.heading" />
+  <About />
 </template>

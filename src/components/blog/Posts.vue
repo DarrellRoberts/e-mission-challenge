@@ -34,3 +34,7 @@ const postsStore = usePostsStore();
     ></v-pagination>
   </div>
 </template>
+
+<style scoped>
+@import "../../assets/stylesheets/components/cards.css";
+</style>

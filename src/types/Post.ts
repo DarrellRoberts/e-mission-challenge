@@ -1,4 +1,4 @@
-export interface Post {
+export type Post = {
   title: string;
   subtitle: string;
   summary: string;
@@ -10,4 +10,4 @@ export interface Post {
     username: string;
     role: string;
   };
-}
+};
