@@ -10,7 +10,6 @@ const icons: Ref<string[]> = ref([
 </script>
 
 <template>
-  <!-- <footer> -->
   <v-footer class="d-flex flex-column">
     <div class="bg-black d-flex w-100 align-center px-4">
       <strong>Get connected with us on social networks!</strong>
@@ -31,5 +30,8 @@ const icons: Ref<string[]> = ref([
       {{ new Date().getFullYear() }} — <strong>Blog Website</strong>
     </div>
   </v-footer>
-  <!-- </footer> -->
 </template>
+
+<style scoped>
+@import "../../assets/stylesheets/components/footer.css";
+</style>
