@@ -27,7 +27,7 @@ const icons: Ref<string[]> = ref([
     </div>
 
     <div class="px-4 py-2 bg-black text-center w-100">
-      {{ new Date().getFullYear() }} — <strong>Blog Website</strong>
+      {{ new Date().getFullYear() }} — <strong>Darrell Roberts</strong>
     </div>
   </v-footer>
 </template>

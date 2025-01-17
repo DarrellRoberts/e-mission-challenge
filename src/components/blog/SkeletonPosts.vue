@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { computed } from "vue";
+const props = defineProps<{
+  n: number;
+}>();
 
 const skeletonArray = computed<number[]>(() => {
-  return new Array(10);
+  return new Array(props.n);
 });
 </script>
 

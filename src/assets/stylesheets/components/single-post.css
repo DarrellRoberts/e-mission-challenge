@@ -1,0 +1,21 @@
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.single-post-image {
+  border-radius: var(--rounded);
+  margin-right: 1rem;
+}
+
+.single-post-main-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}

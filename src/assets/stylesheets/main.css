@@ -19,6 +19,9 @@
   /* fonts */
   --main-font: "Jost";
 
+  /* border-radius */
+  --rounded: 10px;
+
   /* breakpoints */
   --breakpoint-small: "400px";
   --breakpoint-medium: "800px";
@@ -36,6 +39,8 @@ body {
 
 h1 {
   font-size: clamp(2rem, 5vw, 7rem);
+  padding: 0 1rem;
+  text-align: center;
 }
 
 h2 {
@@ -45,4 +50,18 @@ h2 {
 a {
   text-decoration: none;
   color: var(--main-font-color);
+}
+
+p:not(blockquote p) {
+  color: var(--secondary-font-color);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  width: 50%;
+  text-align: center;
+}
+
+blockquote p {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--main-font-color);
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
