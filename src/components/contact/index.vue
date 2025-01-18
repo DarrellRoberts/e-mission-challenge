@@ -4,9 +4,9 @@ import { useField, useForm } from "vee-validate";
 const { handleSubmit, handleReset } = useForm({
   validationSchema: {
     name(value: string) {
-      if (value?.length >= 2) return true;
+      if (value?.length >= 2 && value?.length < 30) return true;
 
-      return "Name needs to be at least 2 characters.";
+      return "Message must be at least 2 characters and less than 30 characters";
     },
     email(value: string) {
       if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true;
@@ -34,7 +34,7 @@ const submit = handleSubmit((values) => {
     <form @submit.prevent="submit">
       <v-text-field
         v-model="name.value.value"
-        :counter="10"
+        :counter="30"
         :error-messages="name.errorMessage.value"
         label="Name"
       ></v-text-field>

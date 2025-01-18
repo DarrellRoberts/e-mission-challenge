@@ -7,7 +7,7 @@ export const usePostsStore = defineStore("allPosts", () => {
   const posts: Ref<Post[] | null> = ref([]);
   const singlePost: Ref<Post | null> = ref(null);
   const currentPage: Ref<number> = ref(1);
-  const itemsPerPage: Ref<number> = ref(10);
+  const itemsPerPage: Ref<number> = ref(14);
   const searchQuery: Ref<string> = ref("");
   const loading: Ref<boolean> = ref(true);
   const error: Ref<Error | null | unknown> = ref(null);
@@ -24,12 +24,11 @@ export const usePostsStore = defineStore("allPosts", () => {
     );
   });
 
-  const route = useRoute();
   watch(
-    () => route.params.title,
+    () => useRoute()?.params?.title,
     () => {
       singlePost.value = posts.value?.find(
-        (post: any) => post.title === route.params.title
+        (post: any) => post.title === useRoute()?.params?.title
       );
     }
   );
