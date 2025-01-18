@@ -22,6 +22,7 @@ headingStore.changeHeading(`${route.params.title}`);
         </v-avatar>
         <span>{{ postsStore?.singlePost?.user.username }}</span>
         <span>Published on: {{ postsStore?.singlePost?.created_at }}</span>
+        <i>{{ postsStore.singlePost?.title }}</i>
       </div>
       <v-img
         class="single-post-image"

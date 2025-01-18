@@ -1,3 +1,23 @@
+.no-posts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  height: 75vh;
+}
+
+.skeleton-posts-container {
+  height: 75vh;
+}
+
+.no-posts-container h2 {
+  color: var(--secondary-font-color);
+}
+
+.mdi-alert::before {
+  font-size: 2.5rem;
+}
+
 .paginated-posts-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -11,4 +31,5 @@
 
 .searchbar {
   width: 50%;
+  margin-left: 1rem;
 }

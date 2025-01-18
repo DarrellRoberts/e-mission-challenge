@@ -6,7 +6,7 @@ const postsStore = usePostsStore();
 </script>
 
 <template>
-  <div v-if="postsStore.loading">
+  <div v-if="postsStore.loading" class="skeleton-posts-container">
     <SkeletonPosts :n="14" />
   </div>
   <div v-else>
@@ -16,13 +16,21 @@ const postsStore = usePostsStore();
       prepend-icon="mdi-magnify"
       v-model="postsStore.searchQuery"
     ></v-text-field>
-    <div class="paginated-posts-container">
+    <div
+      v-if="postsStore.filteredPosts.length === 0"
+      class="no-posts-container"
+    >
+      <v-icon color="warning" icon="mdi-alert"></v-icon>
+      <h2>No results found</h2>
+    </div>
+    <div v-else class="paginated-posts-container">
       <v-container v-for="post in postsStore.filteredPosts">
         <v-card
           class="pa-2 ma-2"
           :subtitle="post.subtitle"
           :text="post.summary"
           :title="post.title"
+          :prepend-avatar="post.user.profile_pic"
         >
           <NuxtLink :to="/posts/ + post.title"
             ><v-btn append-icon="mdi-magnify" color="black"
@@ -36,7 +44,7 @@ const postsStore = usePostsStore();
       v-if="!postsStore.loading"
       :length="postsStore.totalPages"
       v-model="postsStore.currentPage"
-      :total-visible="5"
+      :total-visible="4"
     ></v-pagination>
   </div>
 </template>
