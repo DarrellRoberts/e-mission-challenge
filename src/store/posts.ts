@@ -24,12 +24,11 @@ export const usePostsStore = defineStore("allPosts", () => {
     );
   });
 
-  const route = useRoute();
   watch(
-    () => route.params.title,
+    () => useRoute()?.params?.title,
     () => {
       singlePost.value = posts.value?.find(
-        (post: any) => post.title === route.params.title
+        (post: any) => post.title === useRoute()?.params?.title
       );
     }
   );

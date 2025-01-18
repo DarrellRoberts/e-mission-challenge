@@ -1,9 +1,16 @@
+.single-post-skeleton-container {
+  height: 100vh;
+  margin: 0 1rem;
+}
+
 .avatar-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   margin-right: 1rem;
+  gap: 0.5rem;
 }
 
 .single-post-image {

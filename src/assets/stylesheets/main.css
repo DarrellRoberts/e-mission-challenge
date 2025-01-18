@@ -21,11 +21,6 @@
 
   /* border-radius */
   --rounded: 10px;
-
-  /* breakpoints */
-  --breakpoint-small: "400px";
-  --breakpoint-medium: "800px";
-  --breakpoint-large: "1200px";
 }
 
 body {
@@ -63,4 +58,10 @@ blockquote p {
   text-align: center;
   color: var(--main-font-color);
   font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.v-card--variant-elevated,
+.v-card--variant-flat,
+.v-skeleton-loader {
+  background-color: var(--secondary-font-color);
 }

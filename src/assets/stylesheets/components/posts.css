@@ -23,12 +23,6 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
-.v-card--variant-elevated,
-.v-card--variant-flat,
-.v-skeleton-loader {
-  background-color: var(--secondary-font-color);
-}
-
 .searchbar {
   width: 50%;
   margin-left: 1rem;

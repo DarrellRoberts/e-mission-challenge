@@ -10,9 +10,17 @@ headingStore.changeHeading(`${route.params.title}`);
 </script>
 
 <template>
-  <div v-if="postsStore.loading">Loading...</div>
+  <div v-if="!postsStore.singlePost" class="single-post-skeleton-container">
+    <h1>
+      Loading: <i>{{ headingStore.heading }}</i>
+    </h1>
+    <v-progress-linear
+      color="var(--secondary-font-color)"
+      indeterminate
+    ></v-progress-linear>
+  </div>
   <div v-else>
-    <v-container class="d-flex justify-space-between align-center w-100">
+    <v-container class="d-flex align-center w-100">
       <div class="avatar-container">
         <v-avatar>
           <v-img
@@ -24,13 +32,14 @@ headingStore.changeHeading(`${route.params.title}`);
         <span>Published on: {{ postsStore?.singlePost?.created_at }}</span>
         <i>{{ postsStore.singlePost?.title }}</i>
       </div>
-      <v-img
+      <v-parallax
         class="single-post-image"
-        max-height="300"
-        cover
-        :lazy-src="postsStore?.singlePost?.featured_image"
         :src="postsStore?.singlePost?.featured_image"
-      ></v-img>
+        :lazy-src="postsStore?.singlePost?.featured_image"
+        cover
+        max-height="300"
+        min-width="200"
+      ></v-parallax>
     </v-container>
     <div
       v-html="postsStore?.singlePost?.main_content"
