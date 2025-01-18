@@ -7,7 +7,7 @@ export const usePostsStore = defineStore("allPosts", () => {
   const posts: Ref<Post[] | null> = ref([]);
   const singlePost: Ref<Post | null> = ref(null);
   const currentPage: Ref<number> = ref(1);
-  const itemsPerPage: Ref<number> = ref(10);
+  const itemsPerPage: Ref<number> = ref(14);
   const searchQuery: Ref<string> = ref("");
   const loading: Ref<boolean> = ref(true);
   const error: Ref<Error | null | unknown> = ref(null);

@@ -7,7 +7,7 @@ const postsStore = usePostsStore();
 
 <template>
   <div v-if="postsStore.loading">
-    <SkeletonPosts :n="10" />
+    <SkeletonPosts :n="14" />
   </div>
   <div v-else>
     <v-text-field
