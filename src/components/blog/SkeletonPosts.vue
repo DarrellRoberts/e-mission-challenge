@@ -21,6 +21,7 @@ const skeletonArray = computed<number[]>(() => {
         :key="i"
         class="pa-2 ma-2"
         type="article"
+        color="var(--secondary-font-color)"
       ></v-skeleton-loader>
     </v-container>
   </div>

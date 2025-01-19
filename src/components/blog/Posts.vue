@@ -27,6 +27,7 @@ const postsStore = usePostsStore();
       <v-container v-for="post in postsStore.filteredPosts">
         <v-card
           class="pa-2 ma-2"
+          color="var(--secondary-font-color)"
           :subtitle="post.subtitle"
           :text="post.summary"
           :title="post.title"

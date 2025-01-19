@@ -77,7 +77,7 @@ export default defineI18nConfig(() => ({
       contact: "Kontakt",
       about: "Über uns",
       dashboard: {
-        title: "Das Dashboard",
+        title: "Dashboard",
         clickPrompt: "Klicken Sie hier",
         body: ", um alle Blogbeiträge zu sehen",
       },
