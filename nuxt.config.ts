@@ -15,7 +15,25 @@ export default defineNuxtConfig({
       });
     },
     "@pinia/nuxt",
+    "nuxt-gtag",
   ],
+  gtag: {
+    id: process.env.GTAG_ID,
+    initCommands: [
+      // Setup up consent mode
+      [
+        "consent",
+        "default",
+        {
+          ad_user_data: "denied",
+          ad_personalization: "denied",
+          ad_storage: "denied",
+          analytics_storage: "denied",
+          wait_for_update: 500,
+        },
+      ],
+    ],
+  },
   vite: {
     vue: {
       template: {
