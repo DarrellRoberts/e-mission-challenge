@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { usePostsStore } from "~/store/posts";
+import { usePostsStore } from "@/store/posts";
 import { onMounted } from "vue";
 
 const postsStore = usePostsStore();
@@ -32,7 +32,8 @@ onMounted(() => {
           ></v-img>
         </v-avatar>
         <span>{{ postsStore?.singlePost?.user.username }}</span>
-        <span>{{$t("published") postsStore?.singlePost?.created_at }}</span>
+        <span>{{ $t("published") }}</span
+        ><span>{{ postsStore?.singlePost?.created_at }}</span>
         <i>{{ postsStore.singlePost?.title }}</i>
       </div>
       <v-parallax

@@ -1,6 +1,9 @@
 <template>
   <div class="posts-dashboard-container">
-    <h2><NuxtLink to="/">Click here</NuxtLink> to view all blog posts</h2>
+    <h2>
+      <NuxtLink to="/">{{ $t("dashboard.clickPrompt") }}</NuxtLink
+      >{{ $t("dashboard.body") }}
+    </h2>
   </div>
 </template>
 

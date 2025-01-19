@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ref, type Ref } from "vue";
-const { setLocale } = useI18n();
 
 const icons: Ref<string[]> = ref([
   "mdi-facebook",
@@ -26,9 +25,6 @@ const icons: Ref<string[]> = ref([
         variant="plain"
       ></v-btn>
     </div>
-    <v-btn @click="setLocale('en')">English</v-btn>
-    <v-btn @click="setLocale('fr')">French</v-btn>
-    <v-btn @click="setLocale('de')">German</v-btn>
     <div class="px-4 py-2 bg-black text-center w-100">
       {{ new Date().getFullYear() }} — <strong>Darrell Roberts</strong>
     </div>

@@ -33,9 +33,9 @@ const postsStore = usePostsStore();
           :prepend-avatar="post.user.profile_pic"
         >
           <NuxtLink :to="/posts/ + post.title"
-            ><v-btn append-icon="mdi-magnify" color="black"
-              >Read More</v-btn
-            ></NuxtLink
+            ><v-btn append-icon="mdi-magnify" color="black">{{
+              $t("readMore")
+            }}</v-btn></NuxtLink
           ></v-card
         >
       </v-container>
