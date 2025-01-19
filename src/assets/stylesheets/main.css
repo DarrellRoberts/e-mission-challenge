@@ -46,22 +46,18 @@ a {
   color: var(--main-font-color);
 }
 
+p,
+blockquote p {
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
 p:not(blockquote p) {
   color: var(--secondary-font-color);
-  font-size: clamp(1rem, 2vw, 1.5rem);
   width: 50%;
-  text-align: center;
 }
 
 blockquote p {
   padding: 2rem 1rem;
-  text-align: center;
   color: var(--main-font-color);
-  font-size: clamp(1rem, 2vw, 1.5rem);
-}
-
-.v-card--variant-elevated,
-.v-card--variant-flat,
-.v-skeleton-loader {
-  background-color: var(--secondary-font-color);
 }
