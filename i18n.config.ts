@@ -8,7 +8,7 @@ export default defineI18nConfig(() => ({
       about: "About",
       dashboard: {
         title: "Dashboard",
-        clickPrompt: "Click here",
+        clickPrompt: "Click here ",
         body: "to view all blog post",
       },
       search: "Search for blog post title",
