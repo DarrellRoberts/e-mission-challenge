@@ -1,0 +1,11 @@
+.posts-dashboard-container {
+  height: 100vh;
+}
+
+.posts-dashboard-container h2 {
+  text-align: center;
+}
+
+.posts-dashboard-container h2 a {
+  color: var(--secondary-font-color);
+}

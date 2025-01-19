@@ -26,15 +26,10 @@ export const usePostsStore = defineStore("allPosts", () => {
       : null;
   });
 
-  watch(
-    () => useRoute()?.params?.title,
-    () => {
-      singlePost.value =
-        posts.value?.find(
-          (post: any) => post.title === useRoute()?.params?.title
-        ) || null;
-    }
-  );
+  const handleSinglePost = (title: string) => {
+    singlePost.value =
+      posts.value?.find((post: any) => post.title === title) || null;
+  };
 
   const totalPages = computed<number>(() => {
     if (posts.value?.length === 0) return 0;
@@ -45,7 +40,7 @@ export const usePostsStore = defineStore("allPosts", () => {
     }
   });
 
-  const getData = async (): Promise<void> => {
+  onMounted(async (): Promise<void> => {
     try {
       loading.value = true;
       const response = await fetch("https://jsonfakery.com/blogs/");
@@ -57,9 +52,7 @@ export const usePostsStore = defineStore("allPosts", () => {
       error.value = err;
       console.error(err);
     }
-  };
-
-  onMounted(() => getData());
+  });
 
   return {
     posts,
@@ -72,5 +65,6 @@ export const usePostsStore = defineStore("allPosts", () => {
     filteredPosts,
     singlePost,
     totalPages,
+    handleSinglePost,
   };
 });

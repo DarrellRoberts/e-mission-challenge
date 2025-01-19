@@ -1,12 +1,19 @@
 <script lang="ts" setup>
 import { usePostsStore } from "~/store/posts";
 import { useHeadingStore } from "~/store/heading";
+import { onMounted } from "vue";
 
 const postsStore = usePostsStore();
 const headingStore = useHeadingStore();
 const route = useRoute();
 
 headingStore.changeHeading(`${route.params.title}`);
+
+onMounted(() => {
+  if (postsStore.posts) {
+    postsStore.handleSinglePost(`${route.params.title}`);
+  }
+});
 </script>
 
 <template>

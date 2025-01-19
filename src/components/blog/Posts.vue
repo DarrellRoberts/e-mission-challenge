@@ -6,7 +6,7 @@ const postsStore = usePostsStore();
 </script>
 
 <template>
-  <div v-if="postsStore.loading" class="skeleton-posts-container">
+  <div v-if="postsStore.loading">
     <SkeletonPosts :n="14" />
   </div>
   <div v-else>
@@ -17,7 +17,7 @@ const postsStore = usePostsStore();
       v-model="postsStore.searchQuery"
     ></v-text-field>
     <div
-      v-if="postsStore.filteredPosts.length === 0"
+      v-if="postsStore.filteredPosts?.length === 0"
       class="no-posts-container"
     >
       <v-icon color="warning" icon="mdi-alert"></v-icon>
