@@ -26,7 +26,7 @@ export const usePostsStore = defineStore("allPosts", () => {
       : null;
   });
 
-  const handleSinglePost = (title: string) => {
+  const handleSinglePost = (title: string | string[]) => {
     singlePost.value =
       posts.value?.find((post: any) => post.title === title) || null;
   };
@@ -46,6 +46,7 @@ export const usePostsStore = defineStore("allPosts", () => {
       const response = await fetch("https://jsonfakery.com/blogs/");
       const data = await response.json();
       posts.value = data;
+      useRoute().params.title && handleSinglePost(useRoute().params.title);
       loading.value = false;
     } catch (err) {
       loading.value = false;
