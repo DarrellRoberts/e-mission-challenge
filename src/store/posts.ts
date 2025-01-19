@@ -15,28 +15,33 @@ export const usePostsStore = defineStore("allPosts", () => {
   const paginatedPosts = computed<Post[] | null>(() => {
     const startIndex = (currentPage.value - 1) * itemsPerPage.value;
     const endIndex = startIndex + itemsPerPage.value;
-    return posts.value?.slice(startIndex, endIndex);
+    return posts.value ? posts.value?.slice(startIndex, endIndex) : null;
   });
 
-  const filteredPosts = computed<Post[]>(() => {
-    return paginatedPosts.value?.filter((post: any) =>
-      post.title.toLowerCase().includes(searchQuery.value.toLowerCase())
-    );
+  const filteredPosts = computed<Post[] | null>(() => {
+    return paginatedPosts.value
+      ? paginatedPosts.value?.filter((post: any) =>
+          post.title.toLowerCase().includes(searchQuery.value.toLowerCase())
+        )
+      : null;
   });
 
   watch(
     () => useRoute()?.params?.title,
     () => {
-      singlePost.value = posts.value?.find(
-        (post: any) => post.title === useRoute()?.params?.title
-      );
+      singlePost.value =
+        posts.value?.find(
+          (post: any) => post.title === useRoute()?.params?.title
+        ) || null;
     }
   );
 
   const totalPages = computed<number>(() => {
     if (posts.value?.length === 0) return 0;
     else {
-      return Math.ceil(posts.value?.length / itemsPerPage.value);
+      return posts.value
+        ? Math.ceil(posts.value?.length / itemsPerPage.value)
+        : 0;
     }
   });
 
