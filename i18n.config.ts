@@ -11,6 +11,7 @@ export default defineI18nConfig(() => ({
         clickPrompt: "Click here",
         body: "to view all blog post",
       },
+      search: "Search for blog post title",
       footer: "Get connected with us on social networks!",
       published: "Published on: ",
       loading: "Loading ",
@@ -22,6 +23,12 @@ export default defineI18nConfig(() => ({
         message: "Message",
         submit: "Submit",
         clear: "Clear",
+        errorMessage: {
+          name: "Message must be at least 2 characters and less than 30 characters",
+          email: "Must be a valid e-mail",
+          message:
+            "Message must be at least 2 characters and less than 200 characters",
+        },
       },
       navLinks: {
         home: "/",
@@ -39,6 +46,7 @@ export default defineI18nConfig(() => ({
         clickPrompt: "Cliquez ici ",
         body: "pour voir tous les articles du blog",
       },
+      search: "Rechercher le titre d'un article de blog",
       footer: "Connectez-vous avec nous sur les réseaux sociaux !",
       published: "Publié le : ",
       loading: "Chargement ",
@@ -50,6 +58,12 @@ export default defineI18nConfig(() => ({
         message: "Courriel",
         submit: "Soumettre",
         clear: "Supprimer",
+      },
+      errorMessage: {
+        name: "Le message doit comporter au moins 2 caractères et moins de 30 caractères.",
+        email: "Doit être un e-mail valide",
+        message:
+          "Le message doit comporter au moins 2 caractères et moins de 200 caractères.",
       },
       navLinks: {
         home: "/fr",
@@ -67,6 +81,7 @@ export default defineI18nConfig(() => ({
         clickPrompt: "Klicken Sie hier",
         body: ", um alle Blogbeiträge zu sehen",
       },
+      search: "Suchen Sie nach Titel des Blogbeitrags",
       footer: "Verbinden Sie sich mit uns in den sozialen Netzwerken!",
       published: "Veröffentlicht am: ",
       loading: "Wird geladen ",
@@ -78,6 +93,12 @@ export default defineI18nConfig(() => ({
         message: "Nachricht",
         submit: "Einreichen",
         clear: "Löschen",
+      },
+      errorMessage: {
+        name: "Die Nachricht muss mindestens 2 Zeichen und weniger als 30 Zeichen enthalten.",
+        email: "Muss eine gültige E-Mail sein",
+        message:
+          "Die Nachricht muss mindestens 2 Zeichen und weniger als 200 Zeichen umfassen",
       },
       navLinks: {
         home: "/de",

@@ -12,7 +12,7 @@ const postsStore = usePostsStore();
   <div v-else>
     <v-text-field
       class="searchbar"
-      placeholder="Search for blog post title"
+      :placeholder="$t('search')"
       prepend-icon="mdi-magnify"
       v-model="postsStore.searchQuery"
     ></v-text-field>
