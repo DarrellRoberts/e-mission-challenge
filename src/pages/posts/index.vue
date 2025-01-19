@@ -5,7 +5,7 @@ import { useHeadingStore } from "@/store/heading";
 
 const store = useHeadingStore();
 
-store.changeHeading("Posts dashboard");
+store.changeHeading("Dashboard");
 </script>
 
 <template>

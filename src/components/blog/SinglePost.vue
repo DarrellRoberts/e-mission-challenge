@@ -1,13 +1,9 @@
 <script lang="ts" setup>
 import { usePostsStore } from "~/store/posts";
-import { useHeadingStore } from "~/store/heading";
 import { onMounted } from "vue";
 
 const postsStore = usePostsStore();
-const headingStore = useHeadingStore();
 const route = useRoute();
-
-headingStore.changeHeading(`${route.params.title}`);
 
 onMounted(() => {
   if (postsStore.posts) {
@@ -19,7 +15,7 @@ onMounted(() => {
 <template>
   <div v-if="!postsStore.singlePost" class="single-post-skeleton-container">
     <h1>
-      Loading: <i>{{ headingStore.heading }}</i>
+      {{ $t("loading") }} <i>{{ route.params.title }}</i>
     </h1>
     <v-progress-linear
       color="var(--secondary-font-color)"
@@ -36,7 +32,7 @@ onMounted(() => {
           ></v-img>
         </v-avatar>
         <span>{{ postsStore?.singlePost?.user.username }}</span>
-        <span>Published on: {{ postsStore?.singlePost?.created_at }}</span>
+        <span>{{$t("published") postsStore?.singlePost?.created_at }}</span>
         <i>{{ postsStore.singlePost?.title }}</i>
       </div>
       <v-parallax

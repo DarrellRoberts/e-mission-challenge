@@ -21,7 +21,7 @@ const postsStore = usePostsStore();
       class="no-posts-container"
     >
       <v-icon color="warning" icon="mdi-alert"></v-icon>
-      <h2>No results found</h2>
+      <h2>{{ $t("noResults") }}</h2>
     </div>
     <div v-else class="paginated-posts-container">
       <v-container v-for="post in postsStore.filteredPosts">

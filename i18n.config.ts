@@ -1,0 +1,36 @@
+export default defineI18nConfig(() => ({
+  legacy: false,
+  locale: "en",
+  messages: {
+    en: {
+      greeting: "Welcome",
+      contact: "Contact",
+      about: "About",
+      dashboard: "Dashboard",
+      footer: "Get connected with us on social networks!",
+      published: "Published on: ",
+      loading: "Loading ",
+      noResults: "No results found",
+    },
+    fr: {
+      greeting: "Bienvenue",
+      contact: "Contactez nous",
+      about: "À propos",
+      dashboard: "Tableau de bord",
+      footer: "Connectez-vous avec nous sur les réseaux sociaux !",
+      published: "Publié le : ",
+      loading: "Chargement ",
+      noResults: "Aucun résultat trouvé",
+    },
+    de: {
+      greeting: "Willkommen",
+      contact: "Kontakt",
+      about: "Über uns",
+      dashboard: "Das Dashboard",
+      footer: "Verbinden Sie sich mit uns in den sozialen Netzwerken!",
+      published: "Veröffentlicht am: ",
+      loading: "Wird geladen ",
+      noResults: "Keine Ergebnisse gefunden",
+    },
+  },
+}));
