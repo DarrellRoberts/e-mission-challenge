@@ -6,10 +6,6 @@
   height: 75vh;
 }
 
-.skeleton-posts-container {
-  /* height: 75vh; */
-}
-
 .no-posts-container h2 {
   color: var(--secondary-font-color);
 }
