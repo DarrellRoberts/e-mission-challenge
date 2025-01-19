@@ -12,7 +12,7 @@ const postsStore = usePostsStore();
   <div v-else>
     <v-text-field
       class="searchbar"
-      placeholder="Search for blog post title"
+      :placeholder="$t('search')"
       prepend-icon="mdi-magnify"
       v-model="postsStore.searchQuery"
     ></v-text-field>
@@ -21,7 +21,7 @@ const postsStore = usePostsStore();
       class="no-posts-container"
     >
       <v-icon color="warning" icon="mdi-alert"></v-icon>
-      <h2>No results found</h2>
+      <h2>{{ $t("noResults") }}</h2>
     </div>
     <div v-else class="paginated-posts-container">
       <v-container v-for="post in postsStore.filteredPosts">
@@ -33,9 +33,9 @@ const postsStore = usePostsStore();
           :prepend-avatar="post.user.profile_pic"
         >
           <NuxtLink :to="/posts/ + post.title"
-            ><v-btn append-icon="mdi-magnify" color="black"
-              >Read More</v-btn
-            ></NuxtLink
+            ><v-btn append-icon="mdi-magnify" color="black">{{
+              $t("readMore")
+            }}</v-btn></NuxtLink
           ></v-card
         >
       </v-container>

@@ -10,7 +10,7 @@ const skeletonArray = computed<number[]>(() => {
 </script>
 
 <template>
-  <h2 class="pa-2 ma-2">Loading</h2>
+  <h2 class="pa-2 ma-2">{{ $t("loading") }}</h2>
   <v-progress-linear
     color="var(--secondary-font-color)"
     indeterminate

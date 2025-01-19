@@ -36,28 +36,28 @@ const submit = handleSubmit((values) => {
         v-model="name.value.value"
         :counter="30"
         :error-messages="name.errorMessage.value"
-        label="Name"
+        :label="$t('contactForm.name')"
       ></v-text-field>
 
       <v-text-field
         v-model="email.value.value"
         :error-messages="email.errorMessage.value"
-        label="E-mail"
+        :label="$t('contactForm.email')"
       ></v-text-field>
 
       <v-textarea
         v-model="message.value.value"
         :error-messages="message.errorMessage.value"
-        label="Message"
+        :label="$t('contactForm.message')"
         variant="outlined"
         counter
         no-resize
       >
       </v-textarea>
 
-      <v-btn class="me-4" type="submit"> submit </v-btn>
+      <v-btn class="me-4" type="submit"> {{ $t("contactForm.submit") }} </v-btn>
 
-      <v-btn @click="handleReset"> clear </v-btn>
+      <v-btn @click="handleReset"> {{ $t("contactForm.clear") }} </v-btn>
     </form>
   </div>
 </template>

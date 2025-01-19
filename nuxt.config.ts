@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     },
     "@pinia/nuxt",
     "nuxt-gtag",
+    "@nuxtjs/i18n",
   ],
   gtag: {
     id: process.env.GTAG_ID,
@@ -39,6 +40,21 @@ export default defineNuxtConfig({
       template: {
         transformAssetUrls,
       },
+    },
+  },
+  i18n: {
+    vueI18n: "./i18n.config.ts",
+    locales: [
+      {
+        code: "en",
+        language: "en-US",
+      },
+      { code: "fr", language: "fr-FR" },
+      { code: "de", language: "de-DE" },
+    ],
+    defaultLocale: "en",
+    detectBrowserLanguage: {
+      useCookie: true,
     },
   },
 });

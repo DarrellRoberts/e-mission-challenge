@@ -1,0 +1,111 @@
+export default defineI18nConfig(() => ({
+  legacy: false,
+  locale: "en",
+  messages: {
+    en: {
+      greeting: "Welcome",
+      contact: "Contact",
+      about: "About",
+      dashboard: {
+        title: "Dashboard",
+        clickPrompt: "Click here",
+        body: "to view all blog post",
+      },
+      search: "Search for blog post title",
+      footer: "Get connected with us on social networks!",
+      published: "Published on: ",
+      loading: "Loading ",
+      noResults: "No results found",
+      readMore: "Read More",
+      contactForm: {
+        name: "Name",
+        email: "E-mail",
+        message: "Message",
+        submit: "Submit",
+        clear: "Clear",
+        errorMessage: {
+          name: "Message must be at least 2 characters and less than 30 characters",
+          email: "Must be a valid e-mail",
+          message:
+            "Message must be at least 2 characters and less than 200 characters",
+        },
+      },
+      navLinks: {
+        home: "/",
+        contact: "/contact",
+        about: "/about",
+        posts: "/posts",
+      },
+    },
+    fr: {
+      greeting: "Bienvenue",
+      contact: "Contactez nous",
+      about: "À propos",
+      dashboard: {
+        title: "Tableau de bord",
+        clickPrompt: "Cliquez ici ",
+        body: "pour voir tous les articles du blog",
+      },
+      search: "Rechercher le titre d'un article de blog",
+      footer: "Connectez-vous avec nous sur les réseaux sociaux !",
+      published: "Publié le : ",
+      loading: "Chargement ",
+      noResults: "Aucun résultat trouvé",
+      readMore: "En savoir plus",
+      contactForm: {
+        name: "Nom",
+        email: "E-mail",
+        message: "Courriel",
+        submit: "Soumettre",
+        clear: "Supprimer",
+      },
+      errorMessage: {
+        name: "Le message doit comporter au moins 2 caractères et moins de 30 caractères.",
+        email: "Doit être un e-mail valide",
+        message:
+          "Le message doit comporter au moins 2 caractères et moins de 200 caractères.",
+      },
+      navLinks: {
+        home: "/fr",
+        contact: "/fr/contact",
+        about: "/fr/about",
+        posts: "/fr/posts",
+      },
+    },
+    de: {
+      greeting: "Willkommen",
+      contact: "Kontakt",
+      about: "Über uns",
+      dashboard: {
+        title: "Das Dashboard",
+        clickPrompt: "Klicken Sie hier",
+        body: ", um alle Blogbeiträge zu sehen",
+      },
+      search: "Suchen Sie nach Titel des Blogbeitrags",
+      footer: "Verbinden Sie sich mit uns in den sozialen Netzwerken!",
+      published: "Veröffentlicht am: ",
+      loading: "Wird geladen ",
+      noResults: "Keine Ergebnisse gefunden",
+      readMore: "Mehr Erfahren",
+      contactForm: {
+        name: "Name",
+        email: "E-mail",
+        message: "Nachricht",
+        submit: "Einreichen",
+        clear: "Löschen",
+      },
+      errorMessage: {
+        name: "Die Nachricht muss mindestens 2 Zeichen und weniger als 30 Zeichen enthalten.",
+        email: "Muss eine gültige E-Mail sein",
+        message:
+          "Die Nachricht muss mindestens 2 Zeichen und weniger als 200 Zeichen umfassen",
+      },
+      navLinks: {
+        home: "/de",
+        contact: "/de/contact",
+        about: "/de/about",
+        posts: "/de/posts",
+      },
+    },
+  },
+}));

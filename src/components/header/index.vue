@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { type NavLink } from "~/types/NavLink";
+const { setLocale } = useI18n();
 
 const navLinks: Ref<NavLink[]> = ref([
   { text: "Home", to: "/", icon: "mdi-home" },
@@ -21,6 +22,9 @@ const drawer: Ref<boolean> = ref(false);
         <v-toolbar-title>Blog Website</v-toolbar-title>
 
         <v-spacer></v-spacer>
+        <v-btn @click="setLocale('en')">En</v-btn>
+        <v-btn @click="setLocale('fr')">Fr</v-btn>
+        <v-btn @click="setLocale('de')">De</v-btn>
 
         <NuxtLink to="/"
           ><v-btn icon="mdi-home" variant="text"></v-btn
